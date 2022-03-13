@@ -11,7 +11,9 @@ struct rbtNode* root = NULL;
 
 void leftRotate(struct rbtNode *x){
     struct rbtNode *y;
-    y = x->right; x->right = y->left;
+    y = x->right;
+    x->right = y->left;
+    
     if( y->left != NULL)
     {
         y->left->parent = x;
@@ -50,6 +52,7 @@ void rightRotate(struct rbtNode *y){
     x->right = y; y->parent = x;
     return;
 }
+
 void colorinsert(struct rbtNode *z){
     struct rbtNode *y=NULL;
     while ((z->parent != NULL) && (z->parent->color == 'r'))
@@ -117,8 +120,6 @@ void inorderTree(struct rbtNode* root){
     return;
 }
 
-
-
 void traversal(struct rbtNode* root){
     if (root != NULL)
     {
@@ -128,7 +129,6 @@ void traversal(struct rbtNode* root){
     }
     return;
 }
-
 
 void insert(int val){
     struct rbtNode *x, *y;
@@ -171,8 +171,6 @@ void insert(int val){
     return;
 }
 
-
-
 void printTree(struct rbtNode *root, int space)
 {
     if (root == NULL)
@@ -203,11 +201,12 @@ else
     printTree(root, 0);
 }
 }
+
 int main(){
     int choice,val,data,var,fl=0;
     while(1)
     {
-        system("cls");
+       // system("cls");
         print(root);
         printf("\nRed Black Tree Menu - \nEnter your choice :\n1:Insert\n 2:Traversal\n 3:Exit\n");
         scanf("%d",&choice);
