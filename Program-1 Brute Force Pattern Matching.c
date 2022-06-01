@@ -12,7 +12,7 @@ while(str[c] != '\0')
 if(str[m] == pat[i]) // ...... matching
 {
 i++; m++;
-if(pat[i] == '\0') //.....found occurrences.
+if(pat[i] == '\0') //.....found occurrences
 {
 flag = 1;
 //.... copy replace string in ans string.
