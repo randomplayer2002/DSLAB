@@ -5,11 +5,11 @@ struct node
     int info;
     struct node *link;
 };
+
 struct node *front;
 struct node *rear;
 
 typedef struct node *NODE;
-
 
 void main ()
 {
